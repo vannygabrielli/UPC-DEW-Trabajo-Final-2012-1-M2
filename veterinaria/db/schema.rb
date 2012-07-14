@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714221658) do
+ActiveRecord::Schema.define(:version => 20120714225504) do
+
+  create_table "howners", :force => true do |t|
+    t.string   "comment"
+    t.integer  "owner_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "howners", ["owner_id"], :name => "index_howners_on_owner_id"
+
+  create_table "hpatients", :force => true do |t|
+    t.string   "comment"
+    t.string   "picture"
+    t.string   "condition"
+    t.integer  "patient_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "hpatients", ["patient_id"], :name => "index_hpatients_on_patient_id"
 
   create_table "owners", :force => true do |t|
     t.string   "name"

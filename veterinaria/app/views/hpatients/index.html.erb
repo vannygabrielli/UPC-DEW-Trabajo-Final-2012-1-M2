@@ -1,0 +1,29 @@
+<h1>Listing hpatients</h1>
+
+<table>
+  <tr>
+    <th>Comment</th>
+    <th>Picture</th>
+    <th>Condition</th>
+    <th>Patient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hpatients.each do |hpatient| %>
+  <tr>
+    <td><%= hpatient.comment %></td>
+    <td><%= hpatient.picture %></td>
+    <td><%= hpatient.condition %></td>
+    <td><%= hpatient.patient %></td>
+    <td><%= link_to 'Show', hpatient %></td>
+    <td><%= link_to 'Edit', edit_hpatient_path(hpatient) %></td>
+    <td><%= link_to 'Destroy', hpatient, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hpatient', new_hpatient_path %>
