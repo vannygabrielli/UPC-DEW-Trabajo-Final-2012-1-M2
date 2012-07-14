@@ -11,7 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713023809) do
+ActiveRecord::Schema.define(:version => 20120714221658) do
+
+  create_table "owners", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "photo"
+    t.string   "phone"
+    t.string   "mobilephone"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "patients", :force => true do |t|
+    t.string   "species"
+    t.string   "race"
+    t.string   "gender"
+    t.string   "bloodtype"
+    t.string   "sterilized"
+    t.string   "size"
+    t.string   "activity"
+    t.float    "weight"
+    t.date     "birthday"
+    t.integer  "owner_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "patients", ["owner_id"], :name => "index_patients_on_owner_id"
 
   create_table "profiles", :force => true do |t|
     t.string   "name"
