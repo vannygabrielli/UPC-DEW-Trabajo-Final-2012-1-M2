@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Email</th>
+    <th>Nombre</th>
+    <th>Correo</th>
     <th>Housephone</th>
     <th>Mobilephone</th>
     <th>Address</th>
@@ -22,7 +22,7 @@
     <td><%= user.mobilephone %></td>
     <td><%= user.address %></td>
     <td><%= user.photo %></td>
-    <td><%= user.profile %></td>
+    <td><%= user.profile.name %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
