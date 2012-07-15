@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714225504) do
+ActiveRecord::Schema.define(:version => 20120715062127) do
+
+  create_table "attentions", :force => true do |t|
+    t.string   "medical_notes"
+    t.string   "medical_images"
+    t.string   "special_conditions"
+    t.integer  "users_id"
+    t.integer  "owners_id"
+    t.integer  "patients_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "attentions", ["owners_id"], :name => "index_attentions_on_owners_id"
+  add_index "attentions", ["patients_id"], :name => "index_attentions_on_patients_id"
+  add_index "attentions", ["users_id"], :name => "index_attentions_on_users_id"
 
   create_table "howners", :force => true do |t|
     t.string   "comment"

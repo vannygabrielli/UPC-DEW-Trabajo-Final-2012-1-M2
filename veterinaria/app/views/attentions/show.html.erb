@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @attention.id %>
+</p>
+
+<p>
+  <b>Medical notes:</b>
+  <%= @attention.medical_notes %>
+</p>
+
+<p>
+  <b>Medical images:</b>
+  <%= @attention.medical_images %>
+</p>
+
+<p>
+  <b>Special conditions:</b>
+  <%= @attention.special_conditions %>
+</p>
+
+<p>
+  <b>Users:</b>
+  <%= @attention.users %>
+</p>
+
+<p>
+  <b>Owners:</b>
+  <%= @attention.owners %>
+</p>
+
+<p>
+  <b>Patients:</b>
+  <%= @attention.patients %>
+</p>
+
+
+<%= link_to 'Edit', edit_attention_path(@attention) %> |
+<%= link_to 'Back', attentions_path %>

@@ -1,4 +1,6 @@
 Veterinaria::Application.routes.draw do
+  resources :attentions
+
   resources :hpatients
 
   resources :howners
