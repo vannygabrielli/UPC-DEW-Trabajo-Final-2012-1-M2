@@ -27,17 +27,17 @@
     <%= f.label :special_conditions %><br />
     <%= f.text_field :special_conditions %>
   </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :users %><br />
-    <%= f.text_field :users %>	
+ 	<%= f.collection_select :users_id, User.all, :id, :name, :prompt => true %>
   </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :owners %><br />
-	<%= f.text_field :owners %>	
-  </div>
-  <div class="field">
+ 	<%= f.collection_select :owners_id, Owner.all, :id, :name, :prompt => true %>
+  </div>  
+   <div class="field">
     <%= f.label :patients %><br />
-    <%= f.text_field :patients %>
+ 	<%= f.collection_select :patients_id, Patient.all, :id, :name, :prompt => true %>
   </div>
   <div class="actions">
     <%= f.submit %>
