@@ -1,0 +1,35 @@
+<h1>Listing attentions</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Medical notes</th>
+    <th>Medical images</th>
+    <th>Special conditions</th>
+    <th>Users</th>
+    <th>Owners</th>
+    <th>Patients</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attentions.each do |attention| %>
+  <tr>
+    <td><%= attention.id %></td>
+    <td><%= attention.medical_notes %></td>
+    <td><%= attention.medical_images %></td>
+    <td><%= attention.special_conditions %></td>
+    <td><%= attention.users %></td>
+    <td><%= attention.owners %></td>
+    <td><%= attention.patients %></td>
+    <td><%= link_to 'Show', attention %></td>
+    <td><%= link_to 'Edit', edit_attention_path(attention) %></td>
+    <td><%= link_to 'Destroy', attention, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attention', new_attention_path %>

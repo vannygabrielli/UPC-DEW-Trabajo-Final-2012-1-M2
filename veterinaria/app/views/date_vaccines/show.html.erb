@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @date_vaccine.description %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @date_vaccine.phone %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @date_vaccine.address %>
+</p>
+
+<p>
+  <b>Registration date:</b>
+  <%= @date_vaccine.registration_date %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @date_vaccine.owner.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_date_vaccine_path(@date_vaccine) %> |
+<%= link_to 'Back', date_vaccines_path %>

@@ -1,4 +1,11 @@
 Veterinaria::Application.routes.draw do
+
+  resources :prospectus
+
+  resources :date_vaccines
+
+  resources :attentions
+
   resources :hpatients
 
   resources :howners

@@ -1,0 +1,31 @@
+<h1>Listing date_vaccines</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>Registration date</th>
+    <th>Owner</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @date_vaccines.each do |date_vaccine| %>
+  <tr>
+    <td><%= date_vaccine.description %></td>
+    <td><%= date_vaccine.phone %></td>
+    <td><%= date_vaccine.address %></td>
+    <td><%= date_vaccine.registration_date %></td>
+    <td><%= date_vaccine.owner.name %></td>
+    <td><%= link_to 'Show', date_vaccine %></td>
+    <td><%= link_to 'Edit', edit_date_vaccine_path(date_vaccine) %></td>
+    <td><%= link_to 'Destroy', date_vaccine, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Date vaccine', new_date_vaccine_path %>

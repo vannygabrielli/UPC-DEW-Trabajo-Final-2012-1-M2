@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  phone: MyString
+  address: MyString
+  registration_date: 2012-07-16
+  owner: 
+
+two:
+  description: MyString
+  phone: MyString
+  address: MyString
+  registration_date: 2012-07-16
+  owner: 

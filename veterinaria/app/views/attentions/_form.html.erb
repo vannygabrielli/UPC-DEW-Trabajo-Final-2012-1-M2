@@ -1,0 +1,45 @@
+<%= form_for(@attention) do |f| %>
+  <% if @attention.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@attention.errors.count, "error") %> prohibited this attention from being saved:</h2>
+
+      <ul>
+      <% @attention.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :medical_notes %><br />
+    <%= f.text_field :medical_notes %>
+  </div>
+  <div class="field">
+    <%= f.label :medical_images %><br />
+    <%= f.text_field :medical_images %>
+  </div>
+  <div class="field">
+    <%= f.label :special_conditions %><br />
+    <%= f.text_field :special_conditions %>
+  </div>
+  <div class="field">
+    <%= f.label :users %><br />
+    <%= f.text_field :users %>	
+  </div>
+  <div class="field">
+    <%= f.label :owners %><br />
+	<%= f.text_field :owners %>	
+  </div>
+  <div class="field">
+    <%= f.label :patients %><br />
+    <%= f.text_field :patients %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

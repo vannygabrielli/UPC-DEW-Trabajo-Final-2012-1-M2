@@ -1,0 +1,41 @@
+<%= form_for(@prospectu) do |f| %>
+  <% if @prospectu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prospectu.errors.count, "error") %> prohibited this prospectu from being saved:</h2>
+
+      <ul>
+      <% @prospectu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.text_field :Email %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_field :Address %>
+  </div>
+  <div class="field">
+    <%= f.label :Photo %><br />
+    <%= f.text_field :Photo %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone %><br />
+    <%= f.text_field :Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Mobilephone %><br />
+    <%= f.text_field :Mobilephone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

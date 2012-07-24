@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  medical_notes: MyString
+  medical_images: MyString
+  special_conditions: MyString
+  users: 
+  owners: 
+  patients: 
+
+two:
+  id: 1
+  medical_notes: MyString
+  medical_images: MyString
+  special_conditions: MyString
+  users: 
+  owners: 
+  patients: 

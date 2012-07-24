@@ -11,7 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714225504) do
+ActiveRecord::Schema.define(:version => 20120720024203) do
+
+  create_table "attentions", :force => true do |t|
+    t.string   "medical_notes"
+    t.string   "medical_images"
+    t.string   "special_conditions"
+    t.integer  "users_id"
+    t.integer  "owners_id"
+    t.integer  "patients_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "attentions", ["owners_id"], :name => "index_attentions_on_owners_id"
+  add_index "attentions", ["patients_id"], :name => "index_attentions_on_patients_id"
+  add_index "attentions", ["users_id"], :name => "index_attentions_on_users_id"
+
+  create_table "date_vaccines", :force => true do |t|
+    t.string   "description"
+    t.string   "phone"
+    t.string   "address"
+    t.date     "registration_date"
+    t.integer  "owner_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "date_vaccines", ["owner_id"], :name => "index_date_vaccines_on_owner_id"
 
   create_table "howners", :force => true do |t|
     t.string   "comment"
@@ -65,6 +92,17 @@ ActiveRecord::Schema.define(:version => 20120714225504) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "prospectus", :force => true do |t|
+    t.string   "Name"
+    t.string   "Email"
+    t.string   "Address"
+    t.string   "Photo"
+    t.string   "Phone"
+    t.string   "Mobilephone"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
