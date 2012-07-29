@@ -1,17 +1,16 @@
+/*('Background_Web.jpg'); }*/
+/*('vintage-dog.gif'); }*/
+/*('Fondo-Perro.jpg'); }*/
 body{
 	padding:0px;
 	margin:0px;
 	background-image:url('Background_Web.jpg');
-	font-family: Verdana, Arial, Helvetica, sans-serif;
 	color:#FFF;
-	font-weight:normal;
-	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight:normal;	
+	height:100%;	
 }
-
 div, p, ul, h2, h3, h4, img{padding:0px; margin:0px;}
-
-/*ul{list-style-type:none;
-div, p, ul, h2, h3, h4, img, form{padding:0px; margin:0px;}}*/
 
 li.formone{
 	list-style: none;
@@ -27,10 +26,7 @@ li.two{
 	background-repeat: no-repeat;
 	padding-left: 8px; 
 }
-/*table#table1{
- width:75%; 
- margin-left:15%; 
- margin-right:15%;}*/
+
  
  table#table1{
 background-color:#FFA101;
@@ -77,7 +73,7 @@ clear:both;
 }
 
 .text4 {
-	font: 10px/12px "Century Gothic", Geneva, sans-serif;
+	font: 10px/12px Tahoma, Geneva, sans-serif;
 	color:#1e0c09;
 	text-align: justify;
 	position:center;
@@ -87,7 +83,7 @@ clear:both;
 	; 
 }
 .text5 {
-	font: 16px/18px "Century Gothic", Geneva, sans-serif;
+	font: 16px/18px Tahoma, Geneva, sans-serif;
 	color:#fff;
 	font-weight:bold;
 	text-align: center;
@@ -201,9 +197,11 @@ a.d:hover {
 	text-decoration:underline;
 }
 
-input, textarea, select{
+input,textarea, select{
 border:#fff 1px solid;
 background-color:#fff;
+width:auto;
+height:auto;
 font:12px/14px Tahoma, sans-serif; color:#000; 
 }
 
@@ -273,9 +271,9 @@ ul#cinco {top: -87px!important; top: -118px;}
 
 
 #cuerpo {
-    width:660px;
-    margin:15px auto;
-    overflow:hidden;
+    width:800px;
+	height:50px;
+    margin:15px;
     background-color:#fec366;
     border:2px #372217 solid;
     border-radius:30px;
@@ -320,16 +318,15 @@ ul#cinco {top: -87px!important; top: -118px;}
     border-bottom:1px #372217 dotted;
 }
 
-p, h1, form, button{border:0; margin:0; padding:0;}
-.spacer{clear:both; height:1px;}
+/*p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}*/
 
 
 
 
 .myform{
-margin:0 auto;
 width:400px;
-padding:14px;
+padding:0px;
 }
 #stylized{
 border:solid 0px #fe9b00;
@@ -384,4 +381,11 @@ font-size:11px;
 font-weight:bold;
 }
 
+.submit input {
+  width:100px;
+}
 
+
+input.search_form {
+  width:100px
+}
