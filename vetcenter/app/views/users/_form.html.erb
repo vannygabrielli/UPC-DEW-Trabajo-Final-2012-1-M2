@@ -1,0 +1,28 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+
+
+  <% valor='Doctor' %>
+  <div id='stylized' class='myform'>
+    <%= f.input :usuario %>
+    <%= f.input :nombres %>
+    <%= f.input :correo %>
+    <%= f.input :telefono %>
+    
+	<div>
+   <%= f.collection_radio :tipo, [[true, 'Doctor'] ,[false, 'Administrador']], :first, :last %>
+		<% if tipo=true %>
+		<% valor= 'Doctor'%>
+		<% else %>		
+		<% valor= 'Administrador' %>
+		<% end %>	
+   </div>
+	
+   <div class="form-actions">
+        <%= f.button :submit %>
+   </div>
+  
+  </div>
+
+  
+<% end %>
