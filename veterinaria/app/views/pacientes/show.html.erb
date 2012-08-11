@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Especie:</b>
+  <%= @paciente.especie %>
+</p>
+
+<p>
+  <b>Raza:</b>
+  <%= @paciente.raza %>
+</p>
+
+<p>
+  <b>Genero:</b>
+  <%= @paciente.genero %>
+</p>
+
+<p>
+  <b>Tipo sangre:</b>
+  <%= @paciente.tipo_sangre %>
+</p>
+
+<p>
+  <b>Esterilizado:</b>
+  <%= @paciente.esterilizado %>
+</p>
+
+<p>
+  <b>Tamanio:</b>
+  <%= @paciente.tamanio %>
+</p>
+
+<p>
+  <b>Actividad:</b>
+  <%= @paciente.actividad %>
+</p>
+
+<p>
+  <b>Peso:</b>
+  <%= @paciente.peso %>
+</p>
+
+<p>
+  <b>Fec nacimiento:</b>
+  <%= @paciente.fec_nacimiento %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @paciente.Cliente %>
+</p>
+
+
+<%= link_to 'Edit', edit_paciente_path(@paciente) %> |
+<%= link_to 'Back', pacientes_path %>

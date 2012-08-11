@@ -11,112 +11,129 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720024203) do
+ActiveRecord::Schema.define(:version => 20120811044341) do
 
-  create_table "attentions", :force => true do |t|
-    t.string   "medical_notes"
-    t.string   "medical_images"
-    t.string   "special_conditions"
-    t.integer  "users_id"
-    t.integer  "owners_id"
-    t.integer  "patients_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+  create_table "administradors", :force => true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "correo"
+    t.integer  "Estado_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  add_index "attentions", ["owners_id"], :name => "index_attentions_on_owners_id"
-  add_index "attentions", ["patients_id"], :name => "index_attentions_on_patients_id"
-  add_index "attentions", ["users_id"], :name => "index_attentions_on_users_id"
+  add_index "administradors", ["Estado_id"], :name => "index_administradors_on_Estado_id"
 
-  create_table "date_vaccines", :force => true do |t|
-    t.string   "description"
-    t.string   "phone"
-    t.string   "address"
-    t.date     "registration_date"
-    t.integer  "owner_id"
+  create_table "cita_vacunas", :force => true do |t|
+    t.string   "nombre_vacuna"
+    t.string   "telefono"
+    t.string   "direccion"
+    t.date     "fecha_registro"
+    t.integer  "Cliente_id"
+    t.integer  "Doctor_id"
+    t.integer  "Paciente_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "cita_vacunas", ["Cliente_id"], :name => "index_cita_vacunas_on_Cliente_id"
+  add_index "cita_vacunas", ["Doctor_id"], :name => "index_cita_vacunas_on_Doctor_id"
+  add_index "cita_vacunas", ["Paciente_id"], :name => "index_cita_vacunas_on_Paciente_id"
+
+  create_table "clientes", :force => true do |t|
+    t.string   "nombre_cliente"
+    t.string   "correo_cliente"
+    t.string   "imagen_cliente"
+    t.string   "tel_casa_cliente"
+    t.string   "tel_cel_cliente"
+    t.integer  "Prospecto_id"
+    t.integer  "Doctor_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "clientes", ["Doctor_id"], :name => "index_clientes_on_Doctor_id"
+  add_index "clientes", ["Prospecto_id"], :name => "index_clientes_on_Prospecto_id"
+
+  create_table "doctor_clientes", :force => true do |t|
+    t.text     "nota_cliente"
+    t.date     "fecha_doctorcliente"
+    t.integer  "Cliente_id"
+    t.integer  "Doctor_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "doctor_clientes", ["Cliente_id"], :name => "index_doctor_clientes_on_Cliente_id"
+  add_index "doctor_clientes", ["Doctor_id"], :name => "index_doctor_clientes_on_Doctor_id"
+
+  create_table "doctor_pacientes", :force => true do |t|
+    t.text     "nota_paciente"
+    t.date     "fecha_doctorpaciente"
+    t.text     "condiciones"
+    t.integer  "Cliente_id"
+    t.integer  "Doctor_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "doctor_pacientes", ["Cliente_id"], :name => "index_doctor_pacientes_on_Cliente_id"
+  add_index "doctor_pacientes", ["Doctor_id"], :name => "index_doctor_pacientes_on_Doctor_id"
+
+  create_table "doctors", :force => true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "correo"
+    t.integer  "Estado_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "doctors", ["Estado_id"], :name => "index_doctors_on_Estado_id"
+
+  create_table "estados", :force => true do |t|
+    t.string   "descripcion"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "imagen_doctor_pacientes", :force => true do |t|
+    t.string   "imagen"
+    t.integer  "DoctorPaciente_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
 
-  add_index "date_vaccines", ["owner_id"], :name => "index_date_vaccines_on_owner_id"
+  add_index "imagen_doctor_pacientes", ["DoctorPaciente_id"], :name => "index_imagen_doctor_pacientes_on_DoctorPaciente_id"
 
-  create_table "howners", :force => true do |t|
-    t.string   "comment"
-    t.integer  "owner_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "pacientes", :force => true do |t|
+    t.string   "especie"
+    t.string   "raza"
+    t.string   "genero"
+    t.string   "tipo_sangre"
+    t.integer  "esterilizado"
+    t.string   "tamanio"
+    t.string   "actividad"
+    t.decimal  "peso"
+    t.date     "fec_nacimiento"
+    t.integer  "Cliente_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
-  add_index "howners", ["owner_id"], :name => "index_howners_on_owner_id"
+  add_index "pacientes", ["Cliente_id"], :name => "index_pacientes_on_Cliente_id"
 
-  create_table "hpatients", :force => true do |t|
-    t.string   "comment"
-    t.string   "picture"
-    t.string   "condition"
-    t.integer  "patient_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "prospectos", :force => true do |t|
+    t.string   "nombre_prospecto"
+    t.string   "correo_prospecto"
+    t.string   "imagen_prospecto"
+    t.string   "tel_casa_prospecto"
+    t.string   "tel_cel_prospecto"
+    t.integer  "Doctor_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
-  add_index "hpatients", ["patient_id"], :name => "index_hpatients_on_patient_id"
-
-  create_table "owners", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "address"
-    t.string   "photo"
-    t.string   "phone"
-    t.string   "mobilephone"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "patients", :force => true do |t|
-    t.string   "species"
-    t.string   "race"
-    t.string   "gender"
-    t.string   "bloodtype"
-    t.string   "sterilized"
-    t.string   "size"
-    t.string   "activity"
-    t.float    "weight"
-    t.date     "birthday"
-    t.integer  "owner_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "patients", ["owner_id"], :name => "index_patients_on_owner_id"
-
-  create_table "profiles", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "prospectus", :force => true do |t|
-    t.string   "Name"
-    t.string   "Email"
-    t.string   "Address"
-    t.string   "Photo"
-    t.string   "Phone"
-    t.string   "Mobilephone"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "housephone"
-    t.string   "mobilephone"
-    t.string   "address"
-    t.string   "photo"
-    t.integer  "profile_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "users", ["profile_id"], :name => "index_users_on_profile_id"
+  add_index "prospectos", ["Doctor_id"], :name => "index_prospectos_on_Doctor_id"
 
 end

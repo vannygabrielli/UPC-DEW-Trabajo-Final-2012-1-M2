@@ -1,0 +1,57 @@
+<%= form_for(@paciente) do |f| %>
+  <% if @paciente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+      <ul>
+      <% @paciente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :especie %><br />
+    <%= f.text_field :especie %>
+  </div>
+  <div class="field">
+    <%= f.label :raza %><br />
+    <%= f.text_field :raza %>
+  </div>
+  <div class="field">
+    <%= f.label :genero %><br />
+    <%= f.text_field :genero %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_sangre %><br />
+    <%= f.text_field :tipo_sangre %>
+  </div>
+  <div class="field">
+    <%= f.label :esterilizado %><br />
+    <%= f.number_field :esterilizado %>
+  </div>
+  <div class="field">
+    <%= f.label :tamanio %><br />
+    <%= f.text_field :tamanio %>
+  </div>
+  <div class="field">
+    <%= f.label :actividad %><br />
+    <%= f.text_field :actividad %>
+  </div>
+  <div class="field">
+    <%= f.label :peso %><br />
+    <%= f.text_field :peso %>
+  </div>
+  <div class="field">
+    <%= f.label :fec_nacimiento %><br />
+    <%= f.date_select :fec_nacimiento %>
+  </div>
+  <div class="field">
+    <%= f.label :Cliente %><br />
+    <%= f.text_field :Cliente %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

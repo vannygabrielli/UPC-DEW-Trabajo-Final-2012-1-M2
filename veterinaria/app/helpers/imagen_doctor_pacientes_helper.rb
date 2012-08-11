@@ -1,0 +1,2 @@
+module ImagenDoctorPacientesHelper
+end

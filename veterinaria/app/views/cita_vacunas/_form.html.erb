@@ -1,0 +1,53 @@
+<%= form_for(@cita_vacuna) do |f| %>
+  <% if @cita_vacuna.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cita_vacuna.errors.count, "error") %> prohibited this cita_vacuna from being saved:</h2>
+
+      <ul>
+      <% @cita_vacuna.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_vacuna %><br />
+    <%= f.text_field :nombre_vacuna %>
+  </div>
+  <div class="field">
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br />
+    <%= f.text_field :direccion %>
+  </div>
+  
+  <div>
+  <label for="mydate">Fecha </label>
+  <input name="mydate" type="text" data-role="datebox" id="mydate"  data-options='{"mode": "datebox","minDays": 0}' value=<%=@cita_vacuna.fecha_registro%>>
+  </div>
+   
+  <div class="field">
+    <%= f.label :Cliente %><br />
+    <%= f.text_field :Cliente %>
+  </div>
+  <div class="field">
+    <%= f.label :Doctor %><br />
+    <%= f.text_field :Doctor %>
+  </div>
+  <div class="field">
+    <%= f.label :Paciente %><br />
+    <%= f.text_field :Paciente %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#estado").hide();
+});
+</script>

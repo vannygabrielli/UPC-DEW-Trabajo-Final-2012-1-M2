@@ -1,22 +1,23 @@
 Veterinaria::Application.routes.draw do
+  resources :cita_vacunas
 
-  resources :prospectus
+  resources :imagen_doctor_pacientes
 
-  resources :date_vaccines
+  resources :doctor_pacientes
 
-  resources :attentions
+  resources :pacientes
 
-  resources :hpatients
+  resources :doctor_clientes
 
-  resources :howners
+  resources :clientes
 
-  resources :patients
+  resources :prospectos
 
-  resources :owners
+  resources :administradors
 
-  resources :users
+  resources :doctors
 
-  resources :profiles
+  resources :estados
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

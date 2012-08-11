@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Veterinaria::Application.config.secret_token = '819463dd8b9537b93a0354b7aece527c07733cda92379dc6c343715e8eaaecf04058be6d65f1e5ea13a63724ec14924935cdbbd9f9f278c8b6d7a09273ef9a06'
+Veterinaria::Application.config.secret_token = 'b8d7dbf9d389b0ad2bb48ad422ce52694632c3bf2b51bd5ad7adaeab2898b4e66836105ce96b2bd5706a565a78b8a9c8bca4364b118f3f9d0ff9b9c724c6d503'

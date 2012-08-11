@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nota_paciente: MyText
+  fecha_doctorpaciente: 2012-08-10
+  condiciones: MyText
+  Cliente: 
+  Doctor: 
+
+two:
+  nota_paciente: MyText
+  fecha_doctorpaciente: 2012-08-10
+  condiciones: MyText
+  Cliente: 
+  Doctor: 

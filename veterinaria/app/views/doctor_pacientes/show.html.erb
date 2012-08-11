@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nota paciente:</b>
+  <%= @doctor_paciente.nota_paciente %>
+</p>
+
+<p>
+  <b>Fecha doctorpaciente:</b>
+  <%= @doctor_paciente.fecha_doctorpaciente %>
+</p>
+
+<p>
+  <b>Condiciones:</b>
+  <%= @doctor_paciente.condiciones %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @doctor_paciente.Cliente %>
+</p>
+
+<p>
+  <b>Doctor:</b>
+  <%= @doctor_paciente.Doctor %>
+</p>
+
+
+<%= link_to 'Edit', edit_doctor_paciente_path(@doctor_paciente) %> |
+<%= link_to 'Back', doctor_pacientes_path %>

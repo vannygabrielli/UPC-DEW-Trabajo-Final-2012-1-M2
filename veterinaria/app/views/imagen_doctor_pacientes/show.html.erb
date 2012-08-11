@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Imagen:</b>
+  <%= @imagen_doctor_paciente.imagen %>
+</p>
+
+<p>
+  <b>Doctorpaciente:</b>
+  <%= @imagen_doctor_paciente.DoctorPaciente %>
+</p>
+
+
+<%= link_to 'Edit', edit_imagen_doctor_paciente_path(@imagen_doctor_paciente) %> |
+<%= link_to 'Back', imagen_doctor_pacientes_path %>

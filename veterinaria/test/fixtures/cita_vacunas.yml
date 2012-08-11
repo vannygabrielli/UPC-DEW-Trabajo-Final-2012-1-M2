@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre_vacuna: MyString
+  telefono: MyString
+  direccion: MyString
+  fecha_registro: 2012-08-10
+  Cliente: 
+  Doctor: 
+  Paciente: 
+
+two:
+  nombre_vacuna: MyString
+  telefono: MyString
+  direccion: MyString
+  fecha_registro: 2012-08-10
+  Cliente: 
+  Doctor: 
+  Paciente: 

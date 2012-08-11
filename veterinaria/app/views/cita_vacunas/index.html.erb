@@ -1,0 +1,47 @@
+
+<div data-role="header" data-theme="a" role="banner">
+<h1>Listing cita_vacunas</h1>
+
+<table>
+  <tr>
+    <th>Nombre vacuna</th>
+    <th>Telefono</th>
+    <th>Direccion</th>
+    <th>Fecha registro</th>
+    <th>Cliente</th>
+    <th>Doctor</th>
+    <th>Paciente</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</div>
+
+<div data-role="content">
+	<div class="rounded-content" id="index">
+		<ul data-role="listview" data-inset="true" data-filter="true">
+			<li data-role="list-divider" role="heading">Lista de Cita Vacunas</li>
+
+<% @cita_vacunas.each do |cita_vacuna| %>
+  <tr>
+    <td><%= cita_vacuna.nombre_vacuna %></td>
+    <td><%= cita_vacuna.telefono %></td>
+    <td><%= cita_vacuna.direccion %></td>
+    <td><%= cita_vacuna.fecha_registro %></td>
+    <td><%= cita_vacuna.Cliente %></td>
+    <td><%= cita_vacuna.Doctor %></td>
+    <td><%= cita_vacuna.Paciente %></td>
+    <td><%= link_to 'Show', cita_vacuna %></td>
+    <td><%= link_to 'Edit', edit_cita_vacuna_path(cita_vacuna) %></td>
+    <td><%= link_to 'Destroy', cita_vacuna, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to 'New Cita vacuna', new_cita_vacuna_path %>
+			</li>	        
+		</ul>
+</div>
